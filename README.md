@@ -39,16 +39,16 @@ cd path/to/transduction-tracker-verifier
 3.  Install the required Python packages:
 ```bash
 pip3 install -r requirements.txt
-```
-**Tip:** Create a requirements.txt file with the following content:
 
-<div style="background-color:#f2f2f2; padding:10px">
+<b>Tip:</b> Create a requirements.txt file with the following content:
+<div style="background-color:#f2f2f2; padding:10px; border-radius: 5px;">
 biopython==1.81 <br>
 colorama==0.4.6 <br>
 joblib==1.3.2<br>
 regex<br>
 pandas
 </div>
+```
 
 4. Ensure `bedtools (version 2.31.0 or later)` and `pblat (version 2.5.1 or later)` are installed and available in your PATH. Additionally, [pslScore](https://genome-source.gi.ucsc.edu/gitlist/kent.git/raw/master/src/utils/pslScore/pslScore.pl) script needs to be downloaded from UCSC.
 
