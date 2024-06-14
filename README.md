@@ -44,10 +44,10 @@ pip3 install -r requirements.txt
 > <b>Tip:</b> Create a requirements.txt file with the following content:
 
 ```
-biopython==1.81 <br>
-colorama==0.4.6 <br>
-joblib==1.3.2<br>
-regex <br>
+biopython==1.81
+colorama==0.4.6
+joblib==1.3.2
+regex
 pandas
 ```
 
