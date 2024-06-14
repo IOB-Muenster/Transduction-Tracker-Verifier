@@ -3,7 +3,7 @@
 ---
 
 ### <b>Overview</b>
-Transduction Tracker (TransductionTracker.V2.py) and Verifier (TransductionVerifier.V2.py) are tools designed to track and verify DNA transductions caused by non-LTR retroelements, optimized for "*Alu*s" and especially "*Alu*Ys."  Therefore, the current version is not guaranteed for other transposable elements (TEs). The tools are implemented in Python 3.10.12 and require specific Python packages and external tools to function properly.
+Transduction Tracker (TransductionTracker.V2.py) and Verifier (TransductionVerifier.V2.py) are tools designed to track and verify DNA transductions caused by non-LTR retroelements, optimized for "*Alu*s" and especially "*Alu*Ys."  Therefore, the current version is not guaranteed for other non-LTR retroelements such as L1s and SVAs. The tools are implemented in Python 3.10.12 and require specific Python packages and external tools to function properly.
 
 ---
 ### <b>Prerequisites</b>
