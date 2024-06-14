@@ -69,7 +69,6 @@ usage: python TransductionTracker.V2.py -r <repeat_annotation_path> -g <referenc
 Parameters:
 
 ```bash
-options:
   -h, --help            show this help message and exit
 
 Inputs Information:
@@ -108,7 +107,7 @@ usage: python TransductionVerifier.V2.py -i <potential_transd.tsv> -r <RepeatMas
 Parameters:
 
 ```bash
--h, --help            show this help message and exit
+  -h, --help            show this help message and exit
   -i , --transduction_file 
                         Path to the potential transduction file (TSV format) detected in by TransductionTracker.py.
   -r , --repeat_annotation 
