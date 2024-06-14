@@ -3,7 +3,7 @@
 ---
 
 ### <b>Overview</b>
-Transduction Tracker (TransductionTracker.V3.py) and Verifier (TransductionVerifier.V3.py) are tools designed to track and verify DNA transductions caused by non-LTR retroelements, optimized for "*Alu*s" and especially "*Alu*Ys."  Therefore, the current version is not guaranteed for other transposable elements (TEs). The tools are implemented in Python 3.10.12 and require specific Python packages and external tools to function properly.
+Transduction Tracker (TransductionTracker.V2.py) and Verifier (TransductionVerifier.V2.py) are tools designed to track and verify DNA transductions caused by non-LTR retroelements, optimized for "*Alu*s" and especially "*Alu*Ys."  Therefore, the current version is not guaranteed for other transposable elements (TEs). The tools are implemented in Python 3.10.12 and require specific Python packages and external tools to function properly.
 
 ---
 ### <b>Prerequisites</b>
@@ -63,15 +63,15 @@ The software package comprises two main programs that need to be executed in the
 
 #### <span style="border-bottom: 1.5px solid; text-decoration: none;">Running transduction tracker </span>
 ```bash
-python TransductionTracker.V3.py
-usage: python TSDetect.py -r <repeat_annotation_path> -g <reference_genome> -s <segmental_duplications (optional)> -o <output_directory> -u <upstream_flank> -d <downstream_flank> -a <Alu_type> -c <cpu_number>
+python TransductionTracker.V2.py
+usage: python TransductionTracker.V2.py -r <repeat_annotation_path> -g <reference_genome> -s <segmental_duplications (optional)> -o <output_directory> -u <upstream_flank> -d <downstream_flank> -a <Alu_type> -c <cpu_number>
 ```
 Parameters:
 
 ```bash
 options:
   -h, --help            show this help message and exit
-  
+
 Inputs Information:
   -r , --repeat_annotation 
                         Path to the repeat annotation file.
@@ -97,24 +97,18 @@ Performance:
 Example: 
 
 ```bash
-python TransductionTracker.V3.py -r repeats.bed -g genome.fasta -s seg_dup.bed -o output_directory -u 100 -d 4500 -a AluY -c 4
+python TransductionTracker.V2.py -r repeats.bed -g genome.fasta -s seg_dup.bed -o output_directory -u 100 -d 4500 -a AluY -c 4
 ```
 
 #### <span style="border-bottom: 1.5px solid; text-decoration: none;">Running transduction verifier</span>
 ```bash 
-python TransductionVerifier.V3.py
-usage: python TransductionVerifier.py -i <potential_transd.tsv> -r <RepeatMasker.out> -g <reference_genome.fa> -t <Alu family> -s <path/to/pslScore> -c <cpu_number>
+python TransductionVerifier.V2.py
+usage: python TransductionVerifier.V2.py -i <potential_transd.tsv> -r <RepeatMasker.out> -g <reference_genome.fa> -t <Alu family> -s <path/to/pslScore.pl> -c <cpu_number> 
 ```
 Parameters:
 
 ```bash
-python TransductionVerifier.V3.py --help
-usage: python TransductionVerifier.py -i <potential_transd.tsv> -r <RepeatMasker.out> -g <reference_genome.fa> -t <Alu family> -s <path/to/pslScore.pl> -c <cpu_number> 
-
-Verifies detected Alu transductions.
-
-options:
-  -h, --help            show this help message and exit
+-h, --help            show this help message and exit
   -i , --transduction_file 
                         Path to the potential transduction file (TSV format) detected in by TransductionTracker.py.
   -r , --repeat_annotation 
@@ -128,7 +122,7 @@ options:
 Example:
 
 ```bash
-python TransductionVerifier.V3.py -i alu_transd_with_pA.tsv -r RM.out -g ref_genome.fa -t AluY -s pslScore.pl -c 4
+python TransductionVerifier.V2.py -i alu_transd_with_pA.tsv -r RM.out -g ref_genome.fa -t AluY -s pslScore.pl -c 4
 ```
 
 ---
