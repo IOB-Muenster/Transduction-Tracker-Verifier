@@ -58,8 +58,8 @@ pandas
 ### <b>Getting started</b>
 
 The software package comprises two main programs that need to be executed in the following order:
-1. TransductionTracker.V3.py
-2. TransductionVerifier.V3.py
+1. TransductionTracker.V2.py
+2. TransductionVerifier.V2.py
 
 #### <span style="border-bottom: 1.5px solid; text-decoration: none;">Running transduction tracker </span>
 ```bash
@@ -127,13 +127,13 @@ python TransductionVerifier.V2.py -i alu_transd_with_pA.tsv -r RM.out -g ref_gen
 ---
 ### <b>Outputs</b>
 
-1. `TransductionTracker.V3.py` generates several files, including:
+1. `TransductionTracker.V2.py` generates several files, including:
     * *_heteroTSD.tsv: contains detected TSDs and related information, excluding those consisting solely of T, A, C, or G homopolymers. This file includes TSDs for *Alu* elements that do not overlap with segmental duplications, if such annotation has been provided to "TransductionTracker.V3.py".
     * *_CHM13v2_potential_alu_transd_with_pA.tsv: contains unfiltered identified transductions. This file serves as input for "TransductionVerifier.V3.py".
       
 The script also produces other files with self-explanatory names that can be used for further investigation.
 
-2. `TransductionVerifier.V3.py` produces multiple files, including:
+2. `TransductionVerifier.V2.py` produces multiple files, including:
     * Results of alignment and post-processing, which are placed in the alignment folder.
     * *_verified_transductions.tsv: comprises transductions for which the potential source was identified and met our other verification criteria. A manual inspection of the results is recommended.
   
