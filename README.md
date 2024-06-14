@@ -41,14 +41,13 @@ cd path/to/transduction-tracker-verifier
 pip3 install -r requirements.txt
 ```
 
-<b>Tip:</b> Create a requirements.txt file with the following content:
-<div style="background-color:#f2f2f2; padding:10px; border-radius: 5px;">
-biopython==1.81 <br>
-colorama==0.4.6 <br>
-joblib==1.3.2<br>
-regex<br>
-pandas
-</div>
+> <b>Tip:</b> Create a requirements.txt file with the following content:
+
+> `biopython==1.81 <br> 
+> colorama==0.4.6 <br>
+> joblib==1.3.2<br>
+> regex<br>
+> pandas
 
 
 4. Ensure `bedtools (version 2.31.0 or later)` and `pblat (version 2.5.1 or later)` are installed and available in your PATH. Additionally, [pslScore](https://genome-source.gi.ucsc.edu/gitlist/kent.git/raw/master/src/utils/pslScore/pslScore.pl) script needs to be downloaded from UCSC.
@@ -143,7 +142,7 @@ The script also produces other files with self-explanatory names that can be use
 2. `TransductionVerifier.V3.py` produces multiple files, including:
     * Results of alignment and post-processing, which are placed in the alignment folder.
     * *_verified_transductions.tsv: comprises transductions for which the potential source was identified and met our other verification criteria. A manual inspection of the results is recommended.
-   
+  
 
 
 
