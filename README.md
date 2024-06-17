@@ -3,7 +3,7 @@
 ---
 
 ### <b>Overview</b>
-Transduction Tracker (TransductionTracker.V2.py) and Verifier (TransductionVerifier.V2.py) are tools designed to track and verify DNA transductions caused by non-LTR retroelements, optimized for "*Alu*s" and especially "*Alu*Ys."  Therefore, the current version is not guaranteed for other non-LTR retroelements such as L1s and SVAs. The tools are implemented in Python 3.10.12 and require specific Python packages and external tools to function correctly.
+Transduction Tracker (TransductionTracker.py) and Verifier (TransductionVerifier.py) are tools designed to track and verify DNA transductions caused by non-LTR retroelements, optimized for "*Alu*s" and especially "*Alu*Ys."  Therefore, the current version is not guaranteed for other non-LTR retroelements such as L1s and SVAs. The tools are implemented in Python 3.10.12 and require specific Python packages and external tools to function correctly.
 
 ---
 ### <b>Prerequisites</b>
@@ -58,13 +58,13 @@ pandas
 ### <b>Getting started</b>
 
 The software package comprises two main programs that need to be executed in the following order:
-1. TransductionTracker.V2.py
-2. TransductionVerifier.V2.py
+1. TransductionTracker.py
+2. TransductionVerifier.py
 
 #### <span style="border-bottom: 1.5px solid; text-decoration: none;">Running transduction tracker </span>
 ```bash
-python TransductionTracker.V2.py
-usage: python TransductionTracker.V2.py -r <repeat_annotation_path> -g <reference_genome> -s <segmental_duplications (optional)> -o <output_directory> -u <upstream_flank> -d <downstream_flank> -a <Alu_type> -c <cpu_number>
+python TransductionTracker.py
+usage: python TransductionTracker.py -r <repeat_annotation_path> -g <reference_genome> -s <segmental_duplications (optional)> -o <output_directory> -u <upstream_flank> -d <downstream_flank> -a <Alu_type> -c <cpu_number>
 ```
 Parameters:
 
@@ -96,13 +96,13 @@ Performance:
 Example: 
 
 ```bash
-python TransductionTracker.V2.py -r repeats.bed -g genome.fasta -s seg_dup.bed -o output_directory -u 100 -d 4500 -a AluY -c 4
+python TransductionTracker.py -r repeats.bed -g genome.fasta -s seg_dup.bed -o output_directory -u 100 -d 4500 -a AluY -c 4
 ```
 
 #### <span style="border-bottom: 1.5px solid; text-decoration: none;">Running transduction verifier</span>
 ```bash 
-python TransductionVerifier.V2.py
-usage: python TransductionVerifier.V2.py -i <potential_transd.tsv> -r <RepeatMasker.out> -g <reference_genome.fa> -t <Alu family> -s <path/to/pslScore.pl> -c <cpu_number> 
+python TransductionVerifier.py
+usage: python TransductionVerifier.py -i <potential_transd.tsv> -r <RepeatMasker.out> -g <reference_genome.fa> -t <Alu family> -s <path/to/pslScore.pl> -c <cpu_number> 
 ```
 Parameters:
 
@@ -111,7 +111,7 @@ Parameters:
   -i , --transduction_file 
                         Path to the potential transduction file (TSV format) detected in by TransductionTracker.py.
   -r , --repeat_annotation 
-                        Path to the segmental duplication-free RepeatMasker output file (.out format). Use "*_NoSegDup_RM.out" if SegDup annotation was provided earlier with "TransductionTracker.V2.py".
+                        Path to the segmental duplication-free RepeatMasker output file (.out format). Use "*_NoSegDup_RM.out" if SegDup annotation was provided earlier with "TransductionTracker.py".
   -g , --reference_genome 
                         Path to the reference genome file.
   -t , --alu_type       Type of Alu element to process. The default is 'AluY'.
@@ -121,19 +121,19 @@ Parameters:
 Example:
 
 ```bash
-python TransductionVerifier.V2.py -i alu_transd_with_pA.tsv -r RM.out -g ref_genome.fa -t AluY -s pslScore.pl -c 4
+python TransductionVerifier.py -i alu_transd_with_pA.tsv -r RM.out -g ref_genome.fa -t AluY -s pslScore.pl -c 4
 ```
 
 ---
 ### <b>Outputs</b>
 
-1. `TransductionTracker.V2.py` generates several files, including:
+1. `TransductionTracker.py` generates several files, including:
     * *_heteroTSD.tsv: contains detected TSDs and related information, excluding those consisting solely of T, A, C, or G homopolymers. This file includes TSDs for *Alu* elements that do not overlap with segmental duplications, if such annotation has been provided to "TransductionTracker.V3.py".
     * *_CHM13v2_potential_alu_transd_with_pA.tsv: contains unfiltered identified transductions. This file serves as input for "TransductionVerifier.V3.py".
       
 The script also produces other files with self-explanatory names that can be used for further investigation.
 
-2. `TransductionVerifier.V2.py` produces multiple files, including:
+2. `TransductionVerifier.py` produces multiple files, including:
     * Results of alignment and post-processing, which are placed in the alignment folder.
     * *_verified_transductions.tsv: comprises transductions for which the potential source was identified and met our other verification criteria. A manual inspection of the results is recommended.
   
