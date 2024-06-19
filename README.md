@@ -18,7 +18,7 @@ Before running the tools, ensure you have the following installed:
 
 You can install these packages using pip3 as follows:
 
-```bash
+```
 pip3 install biopython==1.81 colorama==0.4.6 joblib==1.3.2 regex pandas
 ```
 
@@ -33,11 +33,11 @@ pip3 install biopython==1.81 colorama==0.4.6 joblib==1.3.2 regex pandas
 1. Download the code: go to the GitHub repository and click the "Code" button, then select "Download ZIP".  Extract the downloaded ZIP file to your desired location.
 
 2. Navigate to the project directory:
-```bash
+```
 cd path/to/transduction-tracker-verifier
 ```
 3.  Install the required Python packages:
-```bash
+```
 pip3 install -r requirements.txt
 ```
 
@@ -95,18 +95,18 @@ Performance:
 ```
 Example: 
 
-```bash
+```
 python TransductionTracker.py -r repeats.bed -g genome.fasta -s seg_dup.bed -o output_directory -u 100 -d 4500 -a AluY -c 4
 ```
 
 #### <span style="border-bottom: 1.5px solid; text-decoration: none;">Running transduction verifier</span>
-```bash 
+``` 
 python TransductionVerifier.py
 usage: python TransductionVerifier.py -i <potential_transd.tsv> -r <RepeatMasker.out> -g <reference_genome.fa> -t <Alu family> -s <path/to/pslScore.pl> -c <cpu_number> 
 ```
 Parameters:
 
-```bash
+```
   -h, --help            show this help message and exit
   -i , --transduction_file 
                         Path to the potential transduction file (TSV format) detected in by TransductionTracker.py.
@@ -120,7 +120,7 @@ Parameters:
 ```
 Example:
 
-```bash
+```
 python TransductionVerifier.py -i alu_transd_with_pA.tsv -r RM.out -g ref_genome.fa -t AluY -s pslScore.pl -c 4
 ```
 
