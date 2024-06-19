@@ -62,13 +62,13 @@ The software package comprises two main programs that need to be executed in the
 2. TransductionVerifier.py
 
 #### <span style="border-bottom: 1.5px solid; text-decoration: none;">Running transduction tracker </span>
-```bash
+```
 python TransductionTracker.py
 usage: python TransductionTracker.py -r <repeat_annotation_path> -g <reference_genome> -s <segmental_duplications (optional)> -o <output_directory> -u <upstream_flank> -d <downstream_flank> -a <Alu_type> -c <cpu_number>
 ```
 Parameters:
 
-```bash
+```
   -h, --help            show this help message and exit
 
 Inputs Information:
